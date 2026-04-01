@@ -7,6 +7,10 @@
 
 ---
 
+[English Version](./README-en.md) | [英文版](./README-en.md)
+
+---
+
 ## 🎯 项目提示词
 
 ```
@@ -169,13 +173,66 @@ curl -X POST http://localhost:8000/api/summarize \
 
 ---
 
+## 🤖 AI 总结功能配置（重要）
+
+要启用 AI 总结功能，你需要在 `backend/server.py` 中配置 API 凭证。
+
+### 步骤 1：配置 API 凭证
+
+打开 `backend/server.py`，修改 **第 202-208 行**：
+
+```python
+# 第 202-208 行：配置你的 AI API 凭证
+NIM_API_KEY = os.getenv(
+    "NIM_API_KEY",
+    "your-api-key-here",  # 替换为你的 API Key
+)
+NIM_API_URL = "https://api.your-provider.com/v1/chat/completions"  # 替换为你的 API URL
+NIM_MODEL = "gpt-4o"  # 替换为你的模型名称
+```
+
+### 步骤 2：设置环境变量（推荐）
+
+建议不要硬编码，而是通过环境变量设置：
+
+```bash
+# Windows
+set NIM_API_KEY=your-api-key-here
+set NIM_API_URL=https://api.your-provider.com/v1/chat/completions
+set NIM_MODEL=your-model-name
+
+# Linux/Mac
+export NIM_API_KEY=your-api-key-here
+export NIM_API_URL=https://api.your-provider.com/v1/chat/completions
+export NIM_MODEL=your-model-name
+```
+
+### 支持的 API 提供商
+
+AI 总结功能支持任何兼容 OpenAI 格式的 API，包括：
+- OpenAI API（GPT-4、GPT-4o、GPT-3.5 Turbo）
+- Anthropic API（Claude）
+- Azure OpenAI
+- Ollama（本地部署）
+- LM Studio（本地部署）
+- 其他兼容 OpenAI 的 API
+
+### 总结接口详情
+
+AI 总结功能实现在 **第 360-416 行**（`/api/summarize` 接口）：
+- 接收 POST 请求，包含项目详情
+- 返回项目的中文总结
+- 包含 API 失败时的错误处理
+
+---
+
 ## 🏗️ 技术栈
 
 | 层 | 技术 |
 |----|------|
 | 后端 | FastAPI + httpx + uvicorn |
 | 前端 | Next.js 15 + React 19 + Tailwind CSS |
-| AI | NVIDIA NIM API (gpt-oss-120b) |
+| AI | openAI API (任意模型) |
 | 数据 | GitHub REST API v3 |
 
 ---
