@@ -5,6 +5,8 @@ Monitor trending and new GitHub projects related to AI, Agent, Claw, Skill, and 
 [![GitHub stars](https://img.shields.io/github/stars/sky-1024/AI-hot-code)](https://github.com/sky-1024/AI-hot-code)
 [![License](https://img.shields.io/github/license/sky-1024/AI-hot-code)](https://github.com/sky-1024/AI-hot-code)
 
+📺 Project Reference: Douyin @32571643812
+
 ---
 
 ## 🎯 Project Prompt

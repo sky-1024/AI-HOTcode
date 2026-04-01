@@ -5,6 +5,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/sky-1024/AI-hot-code)](https://github.com/sky-1024/AI-hot-code)
 [![License](https://img.shields.io/github/license/sky-1024/AI-hot-code)](https://github.com/sky-1024/AI-hot-code)
 
+📺 项目参考：抖音 @32571643812
+
 ---
 
 [English Version](./README-en.md) | [英文版](./README-en.md)
